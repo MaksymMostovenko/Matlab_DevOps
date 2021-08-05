@@ -127,3 +127,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+*.bat
+*.ps1
+/task1/Scripts/activate
+*.exe
+*.cfg
+/.vscode/settings.json
