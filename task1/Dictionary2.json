@@ -1,0 +1,24 @@
+{
+    "Goods": {
+      "Parma": {
+        "Price": 33,
+        "Origin": "Italy"
+      },
+      "Beef": {
+        "Price": 12,
+        "Origin": "England"
+      },
+      "Pork": {
+        "Price": 41,
+        "Origin": "Dutch"
+      },
+      "Chicken": {
+        "Price": 60,
+        "Origin": "Far far away"
+      },
+      "Duck": {
+        "Price": 9,
+        "Origin": "Far far away"
+      }
+    }
+  }

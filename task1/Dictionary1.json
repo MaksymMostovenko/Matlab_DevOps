@@ -1,0 +1,20 @@
+{
+    "Goods": {
+      "Salami": {
+        "Price": 43,
+        "Origin": "Italy"
+      },
+      "Ham": {
+        "Price": 666,
+        "Origin": "England"
+      },
+      "Spam": {
+        "Price": 46,
+        "Origin": "Dutch"
+      },
+      "Eggs": {
+        "Price": 1,
+        "Origin": "Far far away"
+      }
+    }
+  }

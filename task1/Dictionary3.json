@@ -1,0 +1,24 @@
+{
+    "Goods": {
+      "Cheddar": {
+        "Price": 33,
+        "Origin": "England"
+      },
+      "Masdam": {
+        "Price": 12,
+        "Origin": "Dutch"
+      },
+      "Rosiskyi": {
+        "Price": 41,
+        "Origin": "Ukraine"
+      },
+      "Bree": {
+        "Price": 60,
+        "Origin": "France"
+      },
+      "Dorblue": {
+        "Price": 9,
+        "Origin": "Germany"
+      }
+    }
+  }
