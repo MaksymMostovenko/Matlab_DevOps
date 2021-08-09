@@ -1,10 +1,14 @@
 
 import json
+from os import path
 
 def OpenJSON(file):
-
-    f = open(file)
-    data = json.load(f)
-    f.close()
-    return data
+    try:
+        f = open(file)
+    except IOError:
+        print("File",file,"does't exist")
+    else:
+        data = json.load(f)
+        f.close()
+        return data
    
