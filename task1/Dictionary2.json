@@ -1,5 +1,5 @@
 {
-    "Goods": {
+    "Meat delights": {
       "Parma": {
         "Price": 33,
         "Origin": "Italy"
@@ -12,13 +12,13 @@
         "Price": 41,
         "Origin": "Dutch"
       },
-      "Chicken": {
+      "Salami": {
         "Price": 60,
         "Origin": "Far far away"
       },
-      "Duck": {
+      "Bratwurst": {
         "Price": 9,
-        "Origin": "Far far away"
+        "Origin": "Germany"
       }
     }
   }

@@ -1,10 +1,10 @@
 {
-    "Goods": {
-      "Salami": {
+    "Grosery": {
+      "Bread": {
         "Price": 43,
         "Origin": "Italy"
       },
-      "Ham": {
+      "Oat": {
         "Price": 666,
         "Origin": "England"
       },
