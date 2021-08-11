@@ -1,20 +1,26 @@
 {
-    "Grosery": {
-      "Bread": {
-        "Price": 43,
-        "Origin": "Italy"
-      },
-      "Oat": {
-        "Price": 666,
-        "Origin": "England"
-      },
-      "Spam": {
-        "Price": 46,
-        "Origin": "Dutch"
-      },
-      "Eggs": {
-        "Price": 1,
-        "Origin": "Far far away"
-      }
+  "Grosery": {
+    "Bread": {
+      "Price": 43,
+      "Origin": "Italy"
+    },
+    "Oat": {
+      "Price": 666,
+      "Origin": "England"
+    },
+    "Spam": {
+      "Price": 46,
+      "Origin": "Dutch"
+    },
+    "Eggs": {
+      "Price": 1,
+      "Origin": "Far far away"
+    }
+  },
+  "Vegetables": {
+    "Tamato" : {
+      "Price" : 3,
+      "Origin" : "From granddma"
     }
   }
+}

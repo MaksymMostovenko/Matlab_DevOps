@@ -1,52 +1,63 @@
 import os
-import operator
+import json
 
 class GroseryStore:
     def __init__(self):
         self.JSFileList = []
         self.CommonDictionary = {}
+        self.SortedDictionary = {}
         self.WORKDIRR = os.getcwd()
+        self.SORTKWORDS = ["ascending", " descending"]
 
-    def static_vars(**kwargs):
-        def decorate(func):
-            for k in kwargs:
-                setattr(func, k, kwargs[k])
-            return func
-        return decorate
-
-    def SortGoods(self, dictionary, arg):
-        SortedDictionary = {"Goods":{}}
-        SortedKeys = sorted(dictionary["Goods"], key=lambda x: (dictionary["Goods"][x]["Price"]))
-        if arg == "Ascending":
-            for K in SortedKeys:
-                SortedDictionary["Goods"].update({K:dictionary["Goods"][K]})
-        elif arg == "Descending":
-            for K in reversed(SortedKeys):
-                SortedDictionary["Goods"].update({K:dictionary["Goods"][K]})
-        else:
+    def SortGoods(self, arg):
+        if len(arg) == 0:
+            try:
+                raise NameError(self.SortGoods.__name__,"There is no arguments")
+            except NameError:
+                print("*** ERROR ***", self.SortGoods.__name__, "*** ERROR ***")
+                raise
+        elif arg not in self.SORTKWORDS:
             try:
                 raise NameError(self.SortGoods.__name__,"Wrong argument", arg,)
             except NameError:
-                
                 print("*** ERROR ***", self.SortGoods.__name__, "*** ERROR ***")
                 raise
-        return SortedDictionary
 
-    def HighestValues(self, dictionary):
-        KeyList = list(dictionary["Goods"].keys())
-        if dictionary["Goods"][KeyList[0]]["Price"] > dictionary["Goods"][KeyList[-1]]["Price"]:
-            for n in range(3):
-                print(KeyList[n])
+        SortedGoods = {}
+        for ProductType in self.CommonDictionary:
+            SortedGoods[ProductType] = {}
+            SortedKeys = sorted(self.CommonDictionary[ProductType],
+                                key=lambda x: (self.CommonDictionary[ProductType][x]["Price"]),
+                                reverse=(arg=='descending'))
+            for  Goods in SortedKeys:
+                SortedGoods[ProductType][Goods] = self.CommonDictionary[ProductType][Goods]
+        self.SortedDictionary = SortedGoods
+
+    def HighestValues(self, product_type):
+        goods_keys_list = list(self.SortedDictionary[product_type].keys())
+        goods_vals_list = list(self.SortedDictionary[product_type].values())
+
+        if product_type not in list(self.SortedDictionary.keys()):
+            try:
+                raise NameError(self.HighestValues.__name__,"There is no any product type:",
+                                product_type)
+            except NameError:
+                print("*** ERROR ***", self.HighestValues.__name__, "*** ERROR ***")
+                raise
+
+        if goods_vals_list[0]["Price"] < goods_vals_list[-1]["Price"]:
+            for i in range(1,4):
+                print(goods_keys_list[-i], goods_vals_list[-i])
         else:
-            for n in range(1,4):
-                print(KeyList[-n])
+            for i in range(1,4):
+                print(goods_keys_list[i], goods_vals_list[i])
 
     def GetGoodsDataList(self):
         for file in os.listdir(self.WORKDIRR):
             if file.endswith(".json"):
                 self.JSFileList.append(file)
 
-    def OpenJSON(file):
+    def OpenJSON(self,file):
         try:
             f = open(file)
         except IOError:
@@ -54,13 +65,19 @@ class GroseryStore:
         else:
             data = json.load(f)
             f.close()
+            print(".json", file, "opened successfuly",'\n')
         return data
 
-    @static_vars(firstrun = True)
     def MergeData(self):
+        self.GetGoodsDataList()
         for FileName in self.JSFileList:
-            dictionary = self.open_task_json.OpenJSON(FileName)
-            if firstrun:
+            dictionary = self.OpenJSON(FileName)
+            if not self.CommonDictionary:
                 self.CommonDictionary.update(dictionary)
             else:
-                self.CommonDictionary["Goods"] |= dictionary["Goods"]
+                for key in dictionary.keys():
+                    if key in self.CommonDictionary:
+                        self.CommonDictionary[key] |= dictionary[key]
+                    else:
+                        self.CommonDictionary[key] = dictionary[key]
+

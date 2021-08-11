@@ -1,24 +1,30 @@
 {
-    "Meat delights": {
-      "Parma": {
-        "Price": 33,
-        "Origin": "Italy"
-      },
-      "Beef": {
-        "Price": 12,
-        "Origin": "England"
-      },
-      "Pork": {
-        "Price": 41,
-        "Origin": "Dutch"
-      },
-      "Salami": {
-        "Price": 60,
-        "Origin": "Far far away"
-      },
-      "Bratwurst": {
-        "Price": 9,
-        "Origin": "Germany"
-      }
+  "Meat delights": {
+    "Parma": {
+      "Price": 33,
+      "Origin": "Italy"
+    },
+    "Beef": {
+      "Price": 12,
+      "Origin": "England"
+    },
+    "Pork": {
+      "Price": 41,
+      "Origin": "Dutch"
+    },
+    "Salami": {
+      "Price": 60,
+      "Origin": "Far far away"
+    },
+    "Bratwurst": {
+      "Price": 9,
+      "Origin": "Germany"
+    }
+  },
+  "Vegetables": {
+    "Patato" : {
+      "Price" : 2,
+      "Origin" : "From granddma"
     }
   }
+}

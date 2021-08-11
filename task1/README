@@ -1,0 +1,11 @@
+Demo Grosery Store has its own legend.
+
+We have a bunch of JSON files that have data about goods: Name, Price, Origin. 
+The goal is to merge all data in one "data base". Sors all kind of goods depends 
+of user will. And print three the most expensive items for one kind of goods.
+
+Software shall meet next requirements:
+1. Merge several data sets from JSON into one.
+2. Sort goods "A-Z" and "Z-A", depends of user command.
+3. Print three the most expencive items from one kind of goods.
+4. Software shall have external inteface to run Demo.
